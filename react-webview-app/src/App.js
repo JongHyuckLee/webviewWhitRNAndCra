@@ -4,6 +4,7 @@ import './App.css';
 
 function App() {
     function send() {
+        console.log(window.__TEST__)
         window?.ReactNativeWebView?.postMessage('From Webview to RN');
     }
     React.useEffect(() => {

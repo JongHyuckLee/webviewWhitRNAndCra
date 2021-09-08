@@ -2,6 +2,8 @@ import { WebView } from "react-native-webview";
 import React from "react";
 
 export default function App () {
+    const injectCode = `window.__TEST__ = 'global test'`
+
     const webviewRef = React.useRef(null);
     const handleOnMessage = ({ nativeEvent: { data } }) => {
         console.log(data)
@@ -21,7 +23,7 @@ export default function App () {
             ref={webviewRef}
             source={{ uri: 'http://localhost:3000/' }}
             javaScriptEnabled={true}
-
+            injectedJavaScript={injectCode}
         />
     );
 };
