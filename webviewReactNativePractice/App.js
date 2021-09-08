@@ -1,12 +1,16 @@
 import { WebView } from "react-native-webview";
 import React from "react";
+import Interface from "./interfaces/index"
 
 export default function App () {
     const injectCode = `window.__TEST__ = 'global test'`
 
     const webviewRef = React.useRef(null);
-    const handleOnMessage = ({ nativeEvent: { data } }) => {
-        console.log(data)
+    const handleOnMessage = async ({ nativeEvent: { data } }) => {
+        if (Interface[data]) {
+            const result = await Interface[data]?.();
+            console.log(result[0]?.color)
+        }
     }
     const handleOnLoadEnd = () => {
         webviewRef.current.postMessage("from RN to Webview")
