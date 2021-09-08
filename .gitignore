@@ -1,0 +1,19 @@
+react-webview-app/node_modules
+react-webview-app/.idea
+react-webview-app/yarn.lock
+
+webviewReactNativePractice/node_modules/
+webviewReactNativePractice/.expo/
+webviewReactNativePractice/npm-debug.*
+webviewReactNativePractice/*.jks
+webviewReactNativePractice/*.p8
+webviewReactNativePractice/*.p12
+webviewReactNativePractice/*.key
+webviewReactNativePractice/*.mobileprovision
+webviewReactNativePractice/*.orig.*
+webviewReactNativePractice/web-build/
+
+# macOS
+webviewReactNativePractice/.DS_Store
+
+.idea
