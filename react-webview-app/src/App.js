@@ -8,12 +8,12 @@ function App() {
         window?.ReactNativeWebView?.postMessage('From Webview to RN');
     }
 
-    function getColors() {
-        window?.ReactNativeWebView?.postMessage('getColor');
+    function setColor() {
+        window?.ReactNativeWebView?.postMessage('setColor');
     }
     React.useEffect(() => {
         window.addEventListener("message",(e) => {
-            alert(e.data)
+            console.log(e.data)
         })
     }, [])
   return (
@@ -21,7 +21,7 @@ function App() {
       <header className="App-header">
         Test
           <button onClick={send}>Send</button>
-          <button onClick={getColors}>Get Colors</button>
+          <button onClick={setColor}>Set Colors</button>
       </header>
     </div>
   );

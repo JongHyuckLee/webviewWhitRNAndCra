@@ -1,7 +1,10 @@
+import {random} from 'lodash';
+
 const Interface = {
-    getColor: async () => {
+    setColor: async (callback) => {
          let colors = await import('../data/colors.json');
-         return colors
+
+         callback(colors?.[random(0, colors?.default?.length)]?.value)
     }
 }
 
